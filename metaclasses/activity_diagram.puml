@@ -1,0 +1,13 @@
+@startuml
+scale 4
+
+start
+:class creation;
+:instance creation;
+:print("Instance initialized");
+if (module run as entry point?) then (yes)
+  :print("Hello");
+else (no)
+endif
+stop
+@enduml
