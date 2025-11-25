@@ -20,6 +20,7 @@ dependencies = [
 [dependency-groups]
 dev = [
     "import-linter>=2.7",
+    "line-profiler>=5.0.0",
     "mypy>=1.18.2",
     "pyinstrument>=5.1.1",
     "pytest>=9.0.1",
