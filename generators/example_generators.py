@@ -67,3 +67,35 @@ def fibonacci() -> Iterator[int]:
     while True:
         yield a
         a, b = b, a + b
+
+
+import itertools
+
+# Gets first 10 elements - most concise way
+for element in itertools.islice(fibonacci(), 10):
+    print(element)
+
+
+# Using enumerate
+for index, element in enumerate(fibonacci()):
+    print(index, element)
+    if index > 10:
+        break
+
+# Using zip function with range to limit the number of iterated elements to 10
+print(list(zip([1, 2], [4, 5, 6])))
+for index, element in zip(range(10), fibonacci()):
+    print(element)
+
+from itertools import batched
+
+
+collection = list(range(10_000))
+
+i = 0
+for batch in batched(collection, 10):
+    print(batch)
+
+    i += 1
+    if i > 10:
+        break
