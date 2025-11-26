@@ -21,3 +21,9 @@ class Foo:
             self._state_changed_at = now
             self._old_state = self._state
             self._state = state
+
+
+if __name__ == "__main__":
+    foo = Foo()
+    for _ in range(100_000):
+        foo.bar(state="error")
