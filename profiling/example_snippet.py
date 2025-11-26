@@ -1,3 +1,6 @@
+# In method `bar` on class `Foo` one of the lines is 2-3 times slower than other
+# ones. Which one is it? Try guessing first and then find out using profilers.
+
 import time
 from enum import StrEnum
 

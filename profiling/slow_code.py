@@ -1,7 +1,7 @@
-# Running
+# Running pytest with duration:
 #   uv run pytest -vv --durations=0 profiling/slow_code.py
 # reveals that test_inserting_10000_keys_reversed is much, much slower than other tests
-# why?
+# why? find the culprit using selected profiler AND *fix it.
 
 import bisect
 import unittest
