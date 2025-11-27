@@ -1,4 +1,3 @@
-import sys
 # threads
 def threads() -> None:
     from concurrent.futures import ThreadPoolExecutor
@@ -8,7 +7,8 @@ def threads() -> None:
 
     futures = []
     with ThreadPoolExecutor(max_workers=4) as executor:
-        futures.append(executor.submit(httpx.get, "http://example.com"))
+        future = executor.submit(httpx.get, "http://example.com")
+        futures.append(future)
 
     print([future.result().status_code for future in futures])
 
@@ -21,7 +21,8 @@ def processes() -> None:
 
     futures = []
     with ProcessPoolExecutor(max_workers=2) as executor:
-        futures.append(executor.submit(httpx.get, "http://example.com"))
+        future = executor.submit(httpx.get, "http://example.com")
+        futures.append(future)
 
     print([future.result().status_code for future in futures])
 
@@ -33,7 +34,8 @@ def subinterpreters() -> None:
 
     futures = []
     with InterpreterPoolExecutor(max_workers=2) as executor:
-        futures.append(executor.submit(httpx.get, "http://example.com"))
+        future = executor.submit(httpx.get, "http://example.com")
+        futures.append(future)
 
     print([future.result().status_code for future in futures])
 
